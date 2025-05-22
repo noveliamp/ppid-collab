@@ -9,7 +9,7 @@ class Blog extends MY_Controller
 
 	public function index()
 	{
-		$this->render('contact');
+		$this->render('blog');
 	}
 }
 
