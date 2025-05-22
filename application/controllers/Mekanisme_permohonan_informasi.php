@@ -1,6 +1,6 @@
 <?php
 
-class Mekanisme_permohonan_informasi extends CI_Controller
+class Mekanisme_permohonan_informasi extends MY_Controller
 {
 	public function __construct()
 	{
@@ -9,8 +9,6 @@ class Mekanisme_permohonan_informasi extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('mekanisme_permohonan_informasi');
-		$this->load->view('footer');
+		$this->render('mekanisme_permohonan_informasi');
 	}
 }

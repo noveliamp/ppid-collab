@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Berita extends CI_Controller
+class Berita extends MY_Controller
 {
 	public function __construct()
 	{
@@ -42,12 +42,8 @@ class Berita extends CI_Controller
 
 		$data['berita'] = $berita_list;
 
-		$this->load->view('header');
-		$this->load->view('berita', $data);
-		$this->load->view('footer');
+		$this->render('berita', $data);
 	}
-
-
 	public function detail($id)
 	{
 		$url_detail = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=3&limit=30&id_artikel=' . $id;
@@ -71,8 +67,12 @@ class Berita extends CI_Controller
 		}
 
 		$data['berita'] = $berita;
-		$this->load->view('header');
-		$this->load->view('detail', $data);  // Pastikan Anda punya file view 'detail.php'
-		$this->load->view('footer');
+		$this->render('detail', $data);
 	}
 }
+	
+
+
+
+
+	

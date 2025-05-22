@@ -1,6 +1,6 @@
 <?php
 
-class Beranda extends CI_Controller
+class Beranda extends MY_Controller
 {
 	public function __construct()
 	{
@@ -24,8 +24,6 @@ class Beranda extends CI_Controller
 		$data['berita'] = $berita_list;
 
 		// Load view dan kirim data berita
-		$this->load->view('header');
-		$this->load->view('beranda', $data);
-		$this->load->view('footer');
+		$this->render('beranda', $data);
 	}
 }

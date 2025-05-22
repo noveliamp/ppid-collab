@@ -1,6 +1,6 @@
 <?php
 
-class Dasar_hukum extends CI_Controller
+class Dasar_hukum extends MY_Controller
 {
 	public function __construct()
 	{
@@ -9,8 +9,6 @@ class Dasar_hukum extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('dasar_hukum');
-		$this->load->view('footer');
+		$this->render('dasar_hukum');
 	}
 }

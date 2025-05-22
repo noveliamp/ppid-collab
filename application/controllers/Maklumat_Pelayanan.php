@@ -1,6 +1,6 @@
 <?php
 
-class Maklumat_Pelayanan extends CI_Controller
+class Maklumat_Pelayanan extends MY_Controller
 {
 	public function __construct()
 	{
@@ -9,8 +9,6 @@ class Maklumat_Pelayanan extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('maklumat_pelayanan');
-		$this->load->view('footer');
+		$this->render('maklumat_pelayanan');
 	}
 }

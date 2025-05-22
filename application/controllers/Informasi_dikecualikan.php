@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Informasi_dikecualikan extends CI_Controller
+class Informasi_dikecualikan extends MY_Controller
 {
     public function __construct()
     {
@@ -54,8 +54,6 @@ class Informasi_dikecualikan extends CI_Controller
         // Kirim link pagination ke view
         $data['pagination_links'] = $this->pagination->create_links();
 
-        $this->load->view('header');
-        $this->load->view('informasi_dikecualikan', $data);
-        $this->load->view('footer');
+		$this->render('informasi_dikecualikan', $data);
     }
 }

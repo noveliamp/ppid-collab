@@ -1,6 +1,6 @@
 <?php
 
-class Permintaan_data extends CI_Controller
+class Permintaan_data extends MY_Controller
 {
 	public function __construct()
 	{
@@ -9,8 +9,6 @@ class Permintaan_data extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('permintaan_data');
-		$this->load->view('footer');
+		$this->render('permintaan_data');
 	}
 }
