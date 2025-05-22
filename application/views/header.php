@@ -9,8 +9,8 @@
 	<meta name="keywords" content="">
 
 	<!-- Favicons -->
-	<link href="assets/img/logo.png" rel="icon">
-	<link href="assets/img/logo.png" rel="apple-touch-icon">
+	<link href="<?= base_url('assets/img/logo.png');?>" rel="icon">
+	<link href="<?= base_url('assets/img/logo.png');?>" rel="apple-touch-icon">
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com" rel="preconnect">
@@ -20,14 +20,14 @@
 	<!-- Vendor CSS Files -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"><!--icon for card beranda -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"><!--icon for card beranda -->
-	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-	<link href="assets/vendor/aos/aos.css" rel="stylesheet">
-	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	<link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet">
+	<link href="<?= base_url('assets/vendor/bootstrap-icons/bootstrap-icons.css');?>" rel="stylesheet">
+	<link href="<?= base_url('assets/vendor/aos/aos.css');?>" rel="stylesheet">
+	<link href="<?= base_url('assets/vendor/swiper/swiper-bundle.min.css');?>" rel="stylesheet">
+	<link href="<?= base_url('assets/vendor/glightbox/css/glightbox.min.css');?>" rel="stylesheet">
 
 	<!-- Main CSS File -->
-	<link href="assets/css/main.css" rel="stylesheet">
+	<link href="<?= base_url('assets/css/main.css'); ?>" rel="stylesheet">
 
 </head>
 
@@ -56,8 +56,23 @@
 
 				<div class="text-right">
 					<a href="permintaan_data" class="btn btn-sm btn-danger">Permintaan Data</a>
-					<a href="registrasi" class="btn btn-sm btn-danger">Register</a>
-					<a href="login" class="btn btn-sm btn-danger">Login</a>
+					<?php if ($this->session->userdata('nama_user')) : ?>
+						<div class="dropdown">
+							<div class="text-light fs-6 pt-1 ms-3" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+								<?= htmlspecialchars($user['nama_user']); ?>
+							</div>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+								<li><a class="dropdown-item" href="profile">Profile</a></li>
+								<li>
+									<hr class="dropdown-divider">
+								</li>
+								<li><a class="dropdown-item text-danger" href="login/logout">Logout</a></li>
+							</ul>
+						</div>
+					<?php else : ?>
+						<a href="registrasi" class="btn btn-sm btn-danger">Register</a>
+						<a href="login" class="btn btn-sm btn-danger">Login</a>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div><!-- End Top Bar -->
@@ -67,7 +82,7 @@
 			<div class="container position-relative d-flex align-items-center justify-content-between">
 				<a href="#" class="logo d-flex align-items-center">
 					<!-- Uncomment the line below if you also wish to use an image logo -->
-					<img src="assets/img/logo.png" alt="PPID Kab. Malang">
+					<img src="<?= base_url('assets/img/logo.png');?>" alt="PPID Kab. Malang">
 					<h1 class="sitename">
 						<strong style="color: #E96B56;">PPID</strong><br>
 						<span style="font-size: 16px;">Kabupaten <span style="color: #E96B56;">Malang</span></span>
@@ -103,7 +118,7 @@
 						<li><a href="contact">Contact</a></li>
 					</ul> -->
 					<ul>
-						<li><a href="beranda" class="active">Beranda</a></li>
+						<li><a href="<?= base_url('beranda'); ?>" class="active">Beranda</a></li>
 						<li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 							<ul>
 								<li><a href="profil">Profil PPID Kabupaten Malang</a></li>

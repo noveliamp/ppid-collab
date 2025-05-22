@@ -1,6 +1,6 @@
 <?php
 
-class Blog extends CI_Controller
+class Blog extends MY_Controller
 {
 	public function __construct()
 	{
@@ -9,9 +9,7 @@ class Blog extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('blog');
-		$this->load->view('footer');
+		$this->render('blog');
 	}
 }
 

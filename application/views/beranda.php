@@ -264,9 +264,9 @@
 
 							<div class="widget statistics-widget">
 								<h5 class="widgetheading">Statistik <strong>Pengunjung</strong></h5>
-								<span class="badge statistik hari">Hari ini 290</span>
-								<span class="badge statistik bulan">Bulan ini 12.229</span>
-								<span class="badge statistik tahun">Tahun ini 24.786</span>
+								<span class="badge statistik hari">Hari ini <?= isset($stats['today']) ? $stats['today'] : 0 ?></span>
+								<span class="badge statistik bulan">Bulan ini <?= isset($stats['month']) ? $stats['month'] : 0 ?></span>
+								<span class="badge statistik tahun">Tahun ini <?= isset($stats['year']) ? $stats['year'] : 0 ?></span>
 							</div>
 
 						</aside>
