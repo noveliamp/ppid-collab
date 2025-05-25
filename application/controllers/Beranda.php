@@ -12,7 +12,14 @@ class Beranda extends MY_Controller
 	{
 		// Ambil data berita terbatas, misal 5 berita terbaru
 		$url_berita = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=3&limit=4';
-		$response_berita = file_get_contents($url_berita);
+		$response_berita = @file_get_contents($url_berita);
+		if ($response_berita === false) {
+			log_message('error', 'Gagal ambil berita dari API dengan file_get_contents.');
+			$data['berita'] = [];
+			$this->render('beranda', $data);
+			return;
+		}
+
 		$berita_list = json_decode($response_berita, true);
 
 		// Jika ingin pasang gambar default
